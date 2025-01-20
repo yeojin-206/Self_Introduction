@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Self_Introduction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4ff; /* 배경색 */
+            text-align: center;
+        }
+
+        .profile-container {
+            margin-top: 80px;
+            margin-bottom: 40px;
+            display: inline-block;
+        }
+
+        .profile-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 100%;
+            object-fit: cover;
+            border: 5px solid #e0e0e0;
+        }
+
+        .button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+            font-size: 16px;
+        }
+
+        .about {
+            background-color: #007bff; /* 파란색 */
+        }
+
+        .contact {
+            background-color: #28a745; /* 초록색 */
+        }
+
+        .source {
+            background-color: #dc3545; /* 빨간색 */
+        }
+
+        .description {
+            margin-top: 50px;
+            font-size: large;
+        }
+        .main {
+            margin-top: 50px;
+            font-size: 25px;
+        }
+        .about-content{
+            margin: 13px;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <img src="self_img.jpg" alt="Profile" class="profile-image">
+        <div class="main">안녕하세요! :)<br>김여진입니다</div>
+    </div>
+    <div class="button-container">
+        <button class="button about" onclick="changeContent('About')">About</button>
+        <button class="button contact" onclick="changeContent('Contact')">Contact</button>
+        <button class="button source" onclick="changeContent('Etc')">Etc</button>
+    </div>
+    <div id="content" class="description">
+        <p>섹션을 선택하세요.</p>
+    </div>
+    <script>
+        function changeContent(section) {
+            const contentDiv = document.getElementById('content'); //content라는 ID를 가진 HTML 요소를 선택하여 contentDiv 변수에 저장합니다. 이를 통해 이 요소의 내용을 수정할 수 있습니다.
+            switch (section) {
+                case 'About':
+                    contentDiv.innerHTML = '<h2>About Me</h2> <p class="about-content">Name: 김여진</p><p class="about-content">Birth date: 05.02.15</p><p class="about-content">Residence: 경기도 부천시</p><p class="about-content">School & Major: 건국대학교 & 컴퓨터 공학부</p>';
+                    break;
+                case 'Contact':
+                    contentDiv.innerHTML = '<h2>Contact Me</h2><p class="about-content">Email: kimyj1692@gmail.com</p><p class="about-content">Github: yeojin-206</p><p class="about-content">Contact: 010-2274-1692</p>';
+                    break;
+                case 'Etc':
+                    contentDiv.innerHTML = '<h2>Etc</h2><p class="about-content">MBTI : ENTJ</p><p class="about-content">Personality: 외향적</p><p class="about-content">Hobby: 노래듣기';
+                    break;
+                default:
+                    contentDiv.innerHTML = '<p>섹션을 선택하세요.</p>';
+            }
+        }
+    </script>
+</body>
+</html>
